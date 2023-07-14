@@ -54,7 +54,7 @@ names will conflict if both modules are imported.
 -}
 
 module Data.Number.RealCyclotomic
-    ( RealCyclotomic
+    ( RealCyclotomic(..)
     , sqrtRat
     , sinDeg
     , cosDeg
