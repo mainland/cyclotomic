@@ -167,10 +167,10 @@ e n
     | otherwise  = cyclotomic n $ convertToBase n (M.singleton 1 1)
 
 instance Show Cyclotomic where
-    show (Cyclotomic n mp)
-        | mp == M.empty  = "0"
-        | otherwise      = leadingTerm rat n ex ++ followingTerms n xs
-        where ((ex,rat):xs) = M.toList mp
+    show (Cyclotomic n mp) =
+        case M.toList mp of
+          [] -> "0"
+          (ex,rat):xs -> leadingTerm rat n ex ++ followingTerms n xs
 
 showBaseExp :: Integer -> Integer -> String
 showBaseExp n 1  = "e(" ++ show n ++ ")"
